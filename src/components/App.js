@@ -7,11 +7,11 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <Header />
-                <div className="card">   
-                <Main />
-                </div>
-                <Footer />
+            <Header />
+            <div className="card">   
+            <Main />
+            </div>
+            <Footer />
             </div>
         )
     }
