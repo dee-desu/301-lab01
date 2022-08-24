@@ -29,6 +29,9 @@ header h1 {
   border-radius: 15px; */
   width: 300px;
 }
+.hedoro-card p {
+  padding: 0 15px 0 15px;
+}
 
 .card{
   display: flex;
@@ -63,6 +66,6 @@ footer p {
   flex-direction: column;
   justify-content: center;
 }
-.info{
+/* .info{
   margin-top: 13px;
-} 
+}  */
