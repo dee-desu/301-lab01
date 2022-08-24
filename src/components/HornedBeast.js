@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
+
 class HornedBeast extends React.Component {
 
     constructor(props) {
@@ -14,15 +15,14 @@ class HornedBeast extends React.Component {
         this.setState({
             voteCount : this.state.voteCount + "🌠"
         })
+
+        this.props.stateUpdate();
+        this.props.toGetData(this.props.id);
     }
 
     render() {
         return(
-            // <div className="hedoro-card">
-            // <h2 className="horned-title">{this.props.title}</h2>
-            // <img className="horned-pic" src={this.props.img} alt={this.props.title} title={this.props.title} />
-            // <p className="beast-description">{this.props.description}</p>
-            // </div>
+           
             <Card style={{ width: '290px' }} className="hedoro-card">
             <Card.Body>
               <Card.Title>{this.props.title}</Card.Title>
@@ -43,3 +43,10 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
+
+
+ // <div className="hedoro-card">
+            // <h2 className="horned-title">{this.props.title}</h2>
+            // <img className="horned-pic" src={this.props.img} alt={this.props.title} title={this.props.title} />
+            // <p className="beast-description">{this.props.description}</p>
+            // </div>
