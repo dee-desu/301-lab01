@@ -1,6 +1,7 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "react-bootstrap/Card";
+import { Button } from "react-bootstrap";
 
 class HornedBeast extends React.Component {
 
@@ -16,8 +17,8 @@ class HornedBeast extends React.Component {
             voteCount : this.state.voteCount + "🌠"
         })
 
-        this.props.stateUpdate();
-        this.props.toGetData(this.props.id);
+        // this.props.stateUpdate();
+        // this.props.toGetData(this.props.id);
     }
 
     render() {
@@ -25,20 +26,33 @@ class HornedBeast extends React.Component {
            
             <Card style={{ width: '290px' }} className="hedoro-card">
             <Card.Body>
-              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Title className="cardTitle">{this.props.title}</Card.Title>
             <Card.Img variant="top" src={this.props.img} onClick={this.increaseVotes}/>
               <Card.Text className="info">
               {this.props.description}
               </Card.Text>
+              <Card.Text className="horns">Horns: {this.props.horns}</Card.Text>
               <Card.Text className="vote">
               Votes
               </Card.Text>
               <Card.Text>
               {this.state.voteCount}
               </Card.Text>
+
+              <Button
+            onClick={() => {
+              this.props.showModal(
+                this.props.title,
+                this.props.img,
+                this.props.description
+              );
+            }}
+          >
+            Expand
+          </Button>
             </Card.Body>
           </Card>
-        )
+        );
     }
 }
 
